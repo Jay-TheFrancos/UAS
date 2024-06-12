@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login-header.css">
+</head>
+<body>
+    <!-- Navbar start -->
+    <nav class="navbar">
+        <a href="#" class="navbar-logo">Bintang Indah Keramik<span></span></a>
+        <div class="navbar-nav">
+            <a href="task1.html">Home</a>
+            <a href="task1.html#shop">Shop</a>
+            <a href="#page">Page</a>
+        </div>
+        <div class="navbar-extra">
+            <a href="#" id="search"><i data-feather="search"></i></a>
+            <a href="login.html" id="user"><i data-feather="user"></i></a>
+            <a href="cart.html" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+            <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+            <span id="welcome-message"></span>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+    <div class="container">
+        <h1 id="loginTitle">Login</h1>
+        <form id="loginForm">
+            <label for="login-username">Username:</label>
+            <input type="text" id="login-username" name="username" required>
+            <br>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="login-message" class="message"></p>
+
+        <button id="showRegisterForm" class="button-login">Register</button>
+        <button id="removeAccount" class="button-remove">Remove Account</button>
+        <div id="registerContainer" class="hidden">
+            <h1 class="register-title">Register</h1>
+            <form id="registerForm">
+                <label for="register-username">Username:</label>
+                <input type="text" id="register-username" name="username" required>
+                <br>
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" name="password" required>
+                <br>
+                <button type="submit">Register</button>
+            </form>
+            <p id="register-message" class="message"></p>
+        </div>
+    </div>
+    <script src="login.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

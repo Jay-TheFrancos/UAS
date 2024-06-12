@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+:root {
+    --primary: rgb(118, 97, 255);
+    --secondary: #f0f0f0;
+    --text-color: #333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--secondary);
+}
+
+/* Navbar styles */
+.navbar.sticky {
+    background-color: #fff;
+}
+
+.navbar {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.navbar-logo {
+    font-style: italic;
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+}
+
+.navbar-logo span {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+    color: black;
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-extra a {
+    color: black;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+.cart-container {
+    max-width: 1200px;
+    margin: 100px auto 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: var(--primary);
+}
+
+.cart-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--secondary);
+}
+
+.item-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-details h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.item-details p {
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.return-button {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.return-button:hover {
+    background-color: #9370db;
+}
+
+/* Media Queries */
+@media (max-width: 870px) {
+    .navbar {
+        padding: 20px 0;
+    }
+
+    .shop-card {
+        margin: 0 30px;
+        gap: 3px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .navbar-nav a {
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover:after {
+        transform: scaleX(0.2);
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 50%;
+        height: 100vh;
+        transition: 0.5s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .hero-content {
+        width: 300px;
+        font-size: 10px;
+        padding: 15% 0 0 5%;
+    }
+
+    .shop-card {
+        margin: 20px 0;
+    }
+
+    .card-store {
+        height: 20rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar-logo {
+        font-size: 25px;
+    }
+
+    .hero-content {
+        padding-top: 50%;
+    }
+
+    .card {
+        font-size: 10px;
+        width: 80%;
+        height: 50%;
+    }
+
+    .card-img img {
+        width: 100%;
+    }
+
+    .eyee .fa-regular {
+        font-size: 10px;
+    }
+
+    .caption-card button {
+        height: 20px;
+    }
+
+    .caption-card button .fa-solid {
+        font-size: 10px;
+    }
+
+    .offline-container {
+        margin: 0;
+    }
+    .card-store {
+        width: 80%;
+        height: 21rem;
+    }
+
+    .store-img img {
+        width: 100%;
+    }
+
+    .container-footer {
+        padding-top: 10%;
+        height: 50%;
+        display: block;
+    }
+
+    .container-footer h3 {
+        border: none;
+    }
+}

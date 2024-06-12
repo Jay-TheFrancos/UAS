@@ -1,0 +1,192 @@
+.navbar.sticky {
+    background-color: #fff;
+}
+
+.navbar {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.navbar-logo {
+    font-style: italic;
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+}
+
+.navbar-logo span {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+    color: black;
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-extra a {
+    color: black;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+:root {
+    --primary: rgb(118, 97, 255);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--primary);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #9370db;
+}
+
+.message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.button-login {
+    font-family: arial;
+    font-weight: bold;
+    color: #14396A !important;
+    font-size: 11px;
+    text-shadow: 1px 1px 0px #7CACDE;
+    box-shadow: 1px 1px 1px #BEE2F9;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: none;
+    background: #63B8EE;
+    background: linear-gradient(to top, #63B8EE, #468CCF);
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+}
+
+.button-login:hover {
+    color: #14396A !important;
+    background: #468CCF;
+    background: linear-gradient(to top, #468CCF, #63B8EE);
+}
+
+.register-title {
+    font-size: 24px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.button-remove {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #14396A !important;
+    font-size: 11px;
+    text-shadow: 1px 1px 0px #7CACDE;
+    box-shadow: 1px 1px 1px #BEE2F9;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: none;
+    background: #FFC080; /* changed background color to distinguish from register button */
+    background: linear-gradient(to top, #FFC080, #FFA07A);
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    left: 0px; /* adjusted position to accommodate both buttons */
+    display: inline-block;
+}
+
+.button-remove:hover {
+    color: #14396A !important;
+    background: #FFA07A;
+    background: linear-gradient(to top, #FFA07A, #FFC080);
+}

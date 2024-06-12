@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <!-- Navbar start -->
+    <nav class="navbar">
+        <a href="task1.html" class="navbar-logo">Bintang Indah Keramik<span></span></a>
+        <div class="navbar-nav">
+            <a href="task1.html#home">Home</a>
+            <a href="task1.html#shop">Shop</a>
+            <a href="task1.html#page">Page</a>
+        </div>
+        <div class="navbar-extra">
+            <a href="#" id="search"><i data-feather="search"></i></a>
+            <a href="login.html" id="user"><i data-feather="user"></i></a>
+            <a href="cart.html" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+            <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+            <span id="welcome-message"></span>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <div class="cart-container">
+        <h1>Your Shopping Cart</h1>
+        <div id="cart-items" class="cart-box"></div>
+        <button class="return-button" onclick="window.location.href='task1.html'">Continue Shopping</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const username = localStorage.getItem('loggedInUser');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const welcomeMessage = document.getElementById('welcome-message');
+
+            if (username) {
+                welcomeMessage.textContent = `Welcome, ${username}`;
+            }
+
+            let userCarts = JSON.parse(localStorage.getItem('userCarts')) || {};
+            let cart = userCarts[username] || [];
+
+            function updateCart() {
+                cartItemsContainer.innerHTML = '';
+                cart.forEach((item, index) => {
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    cartItem.innerHTML = `
+                        <img src="${item.imgSrc}" alt="${item.description}" class="item-image">
+                        <div class="item-details">
+                            <h2>${item.description}</h2>
+                            <p>Price: IDR ${item.price}</p>
+                            <p>Amount: 
+                                <button class="decrease" data-index="${index}">-</button>
+                                ${item.amount}
+                                <button class="increase" data-index="${index}">+</button>
+                            </p>
+                        </div>
+                        <button class="remove" data-index="${index}">Remove</button>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+
+                document.querySelectorAll('.increase').forEach(button => {
+                    button.addEventListener('click', (event) => {
+                        const index = event.target.getAttribute('data-index');
+                        cart[index].amount += 1;
+                        userCarts[username] = cart;
+                        localStorage.setItem('userCarts', JSON.stringify(userCarts));
+                        updateCart();
+                    });
+                });
+
+                document.querySelectorAll('.decrease').forEach(button => {
+                    button.addEventListener('click', (event) => {
+                        const index = event.target.getAttribute('data-index');
+                        if (cart[index].amount > 1) {
+                            cart[index].amount -= 1;
+                            userCarts[username] = cart;
+                            localStorage.setItem('userCarts', JSON.stringify(userCarts));
+                            updateCart();
+                        }
+                    });
+                });
+
+                document.querySelectorAll('.remove').forEach(button => {
+                    button.addEventListener('click', (event) => {
+                        const index = event.target.getAttribute('data-index');
+                        cart.splice(index, 1);
+                        userCarts[username] = cart;
+                        localStorage.setItem('userCarts', JSON.stringify(userCarts));
+                        updateCart();
+                    });
+                });
+            }
+
+            updateCart();
+        });
+    </script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>
